@@ -91,12 +91,39 @@ namespace Galaga.Menu
             SDL.SDL_Event e;
             while (SDL.SDL_PollEvent(out e) != 0)
             {
+                // Check if the player clicked on the start button
+                if (e.type == SDL.SDL_EventType.SDL_MOUSEBUTTONDOWN && e.button.button == SDL.SDL_BUTTON_LEFT)
+                {
+                    int x = e.button.x;
+                    int y = e.button.y;
+                    if (x >= Rect.x && x <= Rect.x + Rect.w &&
+                        y >= Rect.y && y <= Rect.y + Rect.h)
+                    {
+                        // Transition to the game state
+                        // TODO
+
+                    }
+                }
 
                 if (e.type == SDL.SDL_EventType.SDL_QUIT)
                 {
                     // Quit the game
                     SDL.SDL_Quit();
                     Environment.Exit(0);
+                }
+
+                // Check if the player clicked on the exit button
+                if (e.type == SDL.SDL_EventType.SDL_MOUSEBUTTONDOWN && e.button.button == SDL.SDL_BUTTON_LEFT )
+                {
+                    int x = e.button.x;
+                    int y = e.button.y;
+                    if (x >= Rect.x && x <= Rect.x + Rect.w &&
+                        y >= Rect.y && y <= Rect.y + Rect.h)
+                    {
+                        // Quit the game
+                        SDL.SDL_Quit();
+                        Environment.Exit(0);
+                    }
                 }
             }
         }
