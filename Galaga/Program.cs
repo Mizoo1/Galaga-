@@ -1,6 +1,7 @@
 ﻿using SDL2;
 using static SDL2.SDL;
 using System;
+using Galaga.Menu;
 
 namespace Pong
 {
@@ -12,16 +13,31 @@ namespace Pong
             SDL.SDL_Init(SDL.SDL_INIT_EVERYTHING);
 
             // Create the window and renderer
-            IntPtr window = SDL.SDL_CreateWindow("Game", SDL.SDL_WINDOWPOS_CENTERED, SDL.SDL_WINDOWPOS_CENTERED, 640,
-                480, SDL.SDL_WindowFlags.SDL_WINDOW_SHOWN);
+            IntPtr window = SDL.SDL_CreateWindow
+                (
+                "Galaga",
+                SDL.SDL_WINDOWPOS_CENTERED,
+                SDL.SDL_WINDOWPOS_CENTERED,
+                640,
+                480,
+                SDL.SDL_WindowFlags.SDL_WINDOW_SHOWN
+                );
             IntPtr renderer = SDL.SDL_CreateRenderer(window, -1, SDL.SDL_RendererFlags.SDL_RENDERER_ACCELERATED);
 
             
 
             // Run the game loop
-            while (true)
+            while (GameState.State !=null)
             {
-                
+                // Handle input
+                GameState.State.HandleInput();
+
+                // Update the game state
+                GameState.State.Update();
+
+                // Display the game state
+                GameState.State.Draw();
+
                 // Update the window
                 SDL.SDL_RenderPresent(renderer);
             }
