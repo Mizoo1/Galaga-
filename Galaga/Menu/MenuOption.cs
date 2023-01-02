@@ -48,6 +48,36 @@ namespace Galaga.Menu
                         h = 50
                     };
                     break;
+                case "setting":
+                   
+                    Rect = new SDL.SDL_Rect()
+                    {
+                        x = 400,
+                        y = 180,
+                        w = 150,
+                        h = 50
+                    };
+                    break;
+                case "help":
+                    
+                    Rect = new SDL.SDL_Rect()
+                    {
+                        x = 400,
+                        y = 260,
+                        w = 150,
+                        h = 50
+                    };
+                    break;
+                case "exit":
+                    
+                    Rect = new SDL.SDL_Rect()
+                    {
+                        x = 400,
+                        y = 340,
+                        w = 150,
+                        h = 50
+                    };
+                    break;
             }
         }
 

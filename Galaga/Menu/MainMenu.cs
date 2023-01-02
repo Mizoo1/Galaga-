@@ -16,6 +16,9 @@ namespace Galaga.Menu
         // Fields to store the button textures and rectangles
         MenuOption background;
         MenuOption start;
+        MenuOption setting;
+        MenuOption help;
+        MenuOption exit;
         private List<MenuOption> options;
         public MainMenu(IntPtr window, IntPtr renderer)
         {
@@ -31,8 +34,14 @@ namespace Galaga.Menu
         {
             background = new MenuOption("background", _renderer, _window);
             start = new MenuOption ("start", _renderer, _window);
+            help = new MenuOption("help", _renderer, _window);
+            setting = new MenuOption("setting", _renderer, _window);
+            exit = new MenuOption("exit", _renderer, _window);
             options.Add(background);
             options.Add(start);
+            options.Add(setting);
+            options.Add(help);
+            options.Add(exit);
 
             foreach (MenuOption menuOption in options)
                 menuOption.createMenu();
