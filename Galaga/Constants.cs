@@ -10,8 +10,8 @@ namespace Galaga
     {
         protected Dictionary<string, string> imagePaths = new Dictionary<string, string>()
         {
-            {"background", "D:\\Muaaz\\Studim\\Semester 3\\c#\\Github\\Galaga-\\Galaga\\Assest\\Background.png"},
-            {"start", "D:\\Muaaz\\Studim\\Semester 3\\c#\\Github\\Galaga-\\Galaga\\Assest\\Start.png"},
+            {"background", "\\\\Mac\\Home\\Desktop\\Semester 3\\Prog\\Galaga-\\Galaga\\Assest\\Background.png"},
+            {"start", "\\\\Mac\\Home\\Desktop\\Semester 3\\Prog\\Galaga-\\Galaga\\Assest\\Start.png"},
         };
     }
 }
