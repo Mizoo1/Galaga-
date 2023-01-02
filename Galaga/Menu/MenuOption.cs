@@ -141,7 +141,7 @@ namespace Galaga.Menu
                     y >= 100 && y <= 100 + 50)
                 {
                     // Transition to the game state
-                    //TODO
+                    GameState.SetState(new StartMenu(_window, _renderer));
 
                 }
             }
@@ -157,7 +157,7 @@ namespace Galaga.Menu
                     y >= 180 && y <= 180 + 50)
                 {
                     // Transition to the game state
-                    //TODO
+                    
 
                 }
             }
