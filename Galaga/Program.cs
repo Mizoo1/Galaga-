@@ -1,54 +1,64 @@
-﻿using SDL2;
-using static SDL2.SDL;
-using System;
+﻿using static SDL2.SDL;
 using Galaga.Menu;
-
-namespace Pong
+using System;
+using Galaga;
+using System.Xml.Linq;
+namespace Pong;
+internal class Program 
 {
-    class Program
+    private static void Main(string[] args)
     {
-        static void Main(string[] args)
+        #region Initialize SDL
+        // Initialize SDL
+        SDL_Init(SDL_INIT_EVERYTHING);
+
+        // Create the window and renderer
+        var window = SDL_CreateWindow
+        (
+            "Galaga",
+            SDL_WINDOWPOS_CENTERED,
+            SDL_WINDOWPOS_CENTERED,
+            640,
+            480,
+            SDL_WindowFlags.SDL_WINDOW_SHOWN
+        );
+        // Load the icon image
+        string LOGO = "D:\\Muaaz\\Studim\\Semester 3\\c#\\Github\\Galaga-\\Galaga\\Assest\\Flugzeug.bmp";
+        var icon = SDL_LoadBMP(LOGO);
+
+        // Set the window icon
+        SDL_SetWindowIcon(window, icon);
+
+        var renderer = SDL_CreateRenderer(window, -1, SDL_RendererFlags.SDL_RENDERER_ACCELERATED);
+
+        // Set the initial game state to the main menu
+        GameState.State = new MainMenu(window, renderer);
+        #endregion
+       
+        #region GameLoop
+        // Run the game loop
+        while (GameState.State != null)
         {
-            // Initialize SDL
-            SDL.SDL_Init(SDL.SDL_INIT_EVERYTHING);
+            // Handle input
+            GameState.State.HandleInput();
 
-            // Create the window and renderer
-            IntPtr window = SDL.SDL_CreateWindow
-                (
-                "Galaga",
-                SDL.SDL_WINDOWPOS_CENTERED,
-                SDL.SDL_WINDOWPOS_CENTERED,
-                640,
-                480,
-                SDL.SDL_WindowFlags.SDL_WINDOW_SHOWN
-                );
-            IntPtr renderer = SDL.SDL_CreateRenderer(window, -1, SDL.SDL_RendererFlags.SDL_RENDERER_ACCELERATED);
+            // Update the game state
+            GameState.State.Update();
 
-            // Set the initial game state to the main menu
-            GameState.State = new MainMenu(window,renderer);
+            // Display the game state
+            GameState.State.Draw();
 
-            
-
-            // Run the game loop
-            while (GameState.State !=null)
-            {
-                // Handle input
-                GameState.State.HandleInput();
-
-                // Update the game state
-                GameState.State.Update();
-
-                // Display the game state
-                GameState.State.Draw();
-
-                // Update the window
-                SDL.SDL_RenderPresent(renderer);
-            }
-
-            // Clean up
-            SDL.SDL_DestroyRenderer(renderer);
-            SDL.SDL_DestroyWindow(window);
-            SDL.SDL_Quit();
+            // Update the window
+            SDL_RenderPresent(renderer);
         }
+        #endregion
+
+        #region Clean up
+        // Clean up
+        SDL_DestroyRenderer(renderer);
+        SDL_DestroyWindow(window);
+        SDL_Quit();
+        #endregion
+       
     }
 }

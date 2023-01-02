@@ -92,39 +92,38 @@ namespace Galaga.Menu
             while (SDL.SDL_PollEvent(out e) != 0)
             {
                 // Check if the player clicked on the start button
-                if (e.type == SDL.SDL_EventType.SDL_MOUSEBUTTONDOWN && e.button.button == SDL.SDL_BUTTON_LEFT)
-                {
-                    int x = e.button.x;
-                    int y = e.button.y;
-                    if (x >= Rect.x && x <= Rect.x + Rect.w &&
-                        y >= Rect.y && y <= Rect.y + Rect.h)
-                    {
-                        // Transition to the game state
-                        // TODO
-
-                    }
-                }
-
+                EnterStart(e);
+                // Check if the player clicked on the exit button
+                EnterQuit(e);
+                // Check if symbol X clicked 
                 if (e.type == SDL.SDL_EventType.SDL_QUIT)
                 {
                     // Quit the game
                     SDL.SDL_Quit();
                     Environment.Exit(0);
                 }
-
-                // Check if the player clicked on the exit button
-                if (e.type == SDL.SDL_EventType.SDL_MOUSEBUTTONDOWN && e.button.button == SDL.SDL_BUTTON_LEFT )
+                // Check if the player pressed the q key
+                if (e.type == SDL.SDL_EventType.SDL_KEYDOWN && e.key.keysym.sym == SDL.SDL_Keycode.SDLK_q)
                 {
-                    int x = e.button.x;
-                    int y = e.button.y;
-                    if (x >= Rect.x && x <= Rect.x + Rect.w &&
-                        y >= Rect.y && y <= Rect.y + Rect.h)
+                    // Quit the game
+                    SDL.SDL_Quit();
+                    Environment.Exit(0);
+                }
+
+                // Check if the player pressed the f key
+                if (e.type == SDL.SDL_EventType.SDL_KEYDOWN && e.key.keysym.sym == SDL.SDL_Keycode.SDLK_f)
+                {
+                    // Toggle fullscreen mode
+                    if ((SDL.SDL_GetWindowFlags(_window) & (uint)SDL.SDL_WindowFlags.SDL_WINDOW_FULLSCREEN) == 0)
                     {
-                        // Quit the game
-                        SDL.SDL_Quit();
-                        Environment.Exit(0);
+                        SDL.SDL_SetWindowFullscreen(_window, (uint)SDL.SDL_WindowFlags.SDL_WINDOW_FULLSCREEN);
+                    }
+                    else
+                    {
+                        SDL.SDL_SetWindowFullscreen(_window, 0);
                     }
                 }
+
             }
         }
 
@@ -132,5 +131,68 @@ namespace Galaga.Menu
         {
 
         }
+        public void EnterStart(SDL.SDL_Event e)
+        {
+            if (e.type == SDL.SDL_EventType.SDL_MOUSEBUTTONDOWN && e.button.button == SDL.SDL_BUTTON_LEFT)
+            {
+                int x = e.button.x;
+                int y = e.button.y;
+                if (x >= 400 && x <= 400 + 150 &&
+                    y >= 100 && y <= 100 + 50)
+                {
+                    // Transition to the game state
+                    //TODO
+
+                }
+            }
+        }
+
+        public void EnterSetting(SDL.SDL_Event e)
+        {
+            if (e.type == SDL.SDL_EventType.SDL_MOUSEBUTTONDOWN && e.button.button == SDL.SDL_BUTTON_LEFT)
+            {
+                int x = e.button.x;
+                int y = e.button.y;
+                if (x >= 400 && x <= 400 + 150 &&
+                    y >= 180 && y <= 180 + 50)
+                {
+                    // Transition to the game state
+                    //TODO
+
+                }
+            }
+        }
+        public void Enterhelp(SDL.SDL_Event e)
+        {
+            if (e.type == SDL.SDL_EventType.SDL_MOUSEBUTTONDOWN && e.button.button == SDL.SDL_BUTTON_LEFT)
+            {
+                int x = e.button.x;
+                int y = e.button.y;
+                if (x >= 400 && x <= 400 + 150 &&
+                    y >= 260 && y <= 260 + 50)
+                {
+                    // Transition to the game state
+                    //TODO
+
+                }
+            }
+        }
+
+        public void EnterQuit(SDL.SDL_Event e)
+        {
+            if (e.type == SDL.SDL_EventType.SDL_MOUSEBUTTONDOWN && e.button.button == SDL.SDL_BUTTON_LEFT)
+            {
+                int x = e.button.x;
+                int y = e.button.y;
+                if (x >= 400 && x <= 400 + 150 &&
+                    y >= 340 && y <= 340 + 50)
+                {
+                    // Quit the game
+                    SDL.SDL_Quit();
+                    Environment.Exit(0);
+                }
+            }
+        }
+
     }
 }
