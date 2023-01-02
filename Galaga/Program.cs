@@ -24,6 +24,9 @@ namespace Pong
                 );
             IntPtr renderer = SDL.SDL_CreateRenderer(window, -1, SDL.SDL_RendererFlags.SDL_RENDERER_ACCELERATED);
 
+            // Set the initial game state to the main menu
+            GameState.State = new MainMenu(window,renderer);
+
             
 
             // Run the game loop

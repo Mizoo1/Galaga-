@@ -14,12 +14,14 @@ namespace Galaga.Menu
         private IntPtr _renderer;
 
         // Fields to store the button textures and rectangles
+        MenuOption background;
         MenuOption start;
         private List<MenuOption> options;
         public MainMenu(IntPtr window, IntPtr renderer)
         {
             _window = window;
             _renderer = renderer;
+            options = new List<MenuOption>();
             SDL.SDL_SetRenderDrawColor(_renderer, 0, 100, 170, 255);
             create();
 
@@ -27,8 +29,13 @@ namespace Galaga.Menu
 
         public void create()
         {
+            background = new MenuOption("background", _renderer, _window);
             start = new MenuOption ("start", _renderer, _window);
+            options.Add(background);
             options.Add(start);
+
+            foreach (MenuOption menuOption in options)
+                menuOption.createMenu();
         }
 
         public void Update()

@@ -27,7 +27,6 @@
     </ItemGroup>
 
     <ItemGroup>
-      <Folder Include="assets\" />
       <Folder Include="Sprite\" />
     </ItemGroup>
 

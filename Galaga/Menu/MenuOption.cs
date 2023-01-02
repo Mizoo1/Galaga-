@@ -7,7 +7,7 @@ using SDL2;
 
 namespace Galaga.Menu
 {
-    public class MenuOption
+    public class MenuOption : Constants
     {
         private IntPtr Texture;
         private IntPtr _renderer;
@@ -21,13 +21,25 @@ namespace Galaga.Menu
             this._renderer = _renderer;
             this._window = _window;
         }
+
+
         public void createMenu()
         {
-            switch (this.name)
+            Texture = SDL_image.IMG_LoadTexture(_renderer, imagePaths[name]);
+            switch (name)
             {
+                case "background":
+                    
+                    Rect = new SDL.SDL_Rect()
+                    {
+                        x = 0,
+                        y = 0,
+                        w = 640,
+                        h = 480
+                    };
+                    break;
                 case "start":
-                    Texture = SDL_image.IMG_LoadTexture(_renderer,
-                    "D:\\Muaaz\\Studim\\Semester 3\\c#\\Github\\Galaga-\\Galaga\\assets\\Start.png");
+                    
                     Rect = new SDL.SDL_Rect()
                     {
                         x = 400,
