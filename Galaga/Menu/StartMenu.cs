@@ -1,8 +1,10 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Linq;
 using SDL2;
 
 namespace Galaga.Menu
@@ -31,7 +33,7 @@ namespace Galaga.Menu
 
             // Load the game texture and set the game rectangle
             _hintergrungTexture = SDL_image.IMG_LoadTexture(_renderer,
-                "C:\\Users\\bdeir\\OneDrive\\drive\\Desktop\\PPong_-_Kopie\\PPong - Kopie\\PPong\\Assest\\Background.png");
+                "D:\\Muaaz\\Studim\\Semester 3\\c#\\Github\\Galaga-\\Galaga\\Assest\\Background.png");
             _hintergroundRect = new SDL.SDL_Rect()
             {
                 x = 0,
@@ -40,7 +42,7 @@ namespace Galaga.Menu
                 h = 480
             };
             _singlePlayTexture = SDL_image.IMG_LoadTexture(_renderer,
-                "C:\\Users\\bdeir\\OneDrive\\drive\\Desktop\\PPong_-_Kopie\\PPong - Kopie\\PPong\\Assest\\Play.png");
+                "D:\\Muaaz\\Studim\\Semester 3\\c#\\Github\\Galaga-\\Galaga\\Assest\\Play.png");
             _singlePlayRect = new SDL.SDL_Rect()
             {
                 x = 400,
@@ -50,7 +52,7 @@ namespace Galaga.Menu
             };
 
             _doublePlayTexture = SDL_image.IMG_LoadTexture(_renderer,
-                "C:\\Users\\bdeir\\OneDrive\\drive\\Desktop\\PPong_-_Kopie\\PPong - Kopie\\PPong\\Assest\\Multiplay.png");
+                "D:\\Muaaz\\Studim\\Semester 3\\c#\\Github\\Galaga-\\Galaga\\Assest\\Multiplay.png");
             _doublePlayRect = new SDL.SDL_Rect()
             {
                 x = 400,
@@ -59,7 +61,7 @@ namespace Galaga.Menu
                 h = 50
             };
             _backTexture = SDL_image.IMG_LoadTexture(_renderer,
-                "C:\\Users\\bdeir\\OneDrive\\drive\\Desktop\\PPong_-_Kopie\\PPong - Kopie\\PPong\\Assest\\Back.png");
+                "D:\\Muaaz\\Studim\\Semester 3\\c#\\Github\\Galaga-\\Galaga\\Assest\\Back.png");
             _backButtonRect = new SDL.SDL_Rect()
             {
                 x = 400,
@@ -151,9 +153,8 @@ namespace Galaga.Menu
                         y >= _singlePlayRect.y && y <= _singlePlayRect.y + _singlePlayRect.h)
                     {
                         // Transition to the main menu state
-                        //GameState.SetState(new SinglePlay(_window, _renderer));
-                        SDL.SDL_Quit();
-                        Environment.Exit(0);
+                       GameState.SetState(new SinglePlay(_window, _renderer));
+                        
                     }
                 }
                 // Check if the player clicked on the DoublePlay button
@@ -165,7 +166,7 @@ namespace Galaga.Menu
                         y >= _doublePlayRect.y && y <= _doublePlayRect.y + _doublePlayRect.h)
                     {
                         // Transition to the main menu state
-                        //TODO
+                        GameState.SetState(new DoublePlay(_window, _renderer));
                     }
                 }
                 // Check if the player clicked on the back button
@@ -177,11 +178,10 @@ namespace Galaga.Menu
                         y >= _backButtonRect.y && y <= _backButtonRect.y + _backButtonRect.h)
                     {
                         // Transition to the main menu state
-                        //GameState.SetState(new MainMenu(_window, _renderer));
+                        GameState.SetState(new MainMenu(_window, _renderer));
                     }
                 }
             }
         }
-
     }
 }

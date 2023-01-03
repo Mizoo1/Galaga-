@@ -7,7 +7,7 @@ using SDL2;
 
 namespace Galaga.Menu
 {
-    public class MenuOption : Constants
+    public class MenuOption : Constants, IGameState
     {
         private IntPtr Texture;
         private IntPtr _renderer;
@@ -81,18 +81,22 @@ namespace Galaga.Menu
             }
         }
 
-        public void draw()
+        public void Draw()
         {
             SDL.SDL_RenderCopy(_renderer, Texture, IntPtr.Zero, ref Rect);
         }
 
-        public void handleInput()
+        public void HandleInput()
         {
             SDL.SDL_Event e;
             while (SDL.SDL_PollEvent(out e) != 0)
             {
                 // Check if the player clicked on the start button
                 EnterStart(e);
+                // Check if the player clicked on the start button
+                EnterSetting(e);
+                // Check if the player clicked on the start button
+                EnterHelp(e);
                 // Check if the player clicked on the exit button
                 EnterQuit(e);
                 // Check if symbol X clicked 
@@ -127,7 +131,7 @@ namespace Galaga.Menu
             }
         }
 
-        public void update()
+        public void Update()
         {
 
         }
@@ -157,12 +161,13 @@ namespace Galaga.Menu
                     y >= 180 && y <= 180 + 50)
                 {
                     // Transition to the game state
-                    
+                    GameState.SetState(new SettingsMenu(_window, _renderer));
+
 
                 }
             }
         }
-        public void Enterhelp(SDL.SDL_Event e)
+        public void EnterHelp(SDL.SDL_Event e)
         {
             if (e.type == SDL.SDL_EventType.SDL_MOUSEBUTTONDOWN && e.button.button == SDL.SDL_BUTTON_LEFT)
             {
@@ -172,7 +177,7 @@ namespace Galaga.Menu
                     y >= 260 && y <= 260 + 50)
                 {
                     // Transition to the game state
-                    //TODO
+                    GameState.SetState(new HelpMenu(_window, _renderer));
 
                 }
             }
@@ -193,6 +198,7 @@ namespace Galaga.Menu
                 }
             }
         }
+
 
     }
 }

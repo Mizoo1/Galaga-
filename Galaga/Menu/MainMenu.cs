@@ -58,14 +58,14 @@ namespace Galaga.Menu
             SDL.SDL_RenderClear(_renderer);
             // Render the button textures
             foreach (MenuOption menuOption in options)
-                menuOption.draw();
+                menuOption.Draw();
         }
 
         // Method to handle player input
         public void HandleInput()
         {
             foreach (MenuOption menuOption in options)
-                menuOption.handleInput();
+                menuOption.HandleInput();
         }
     }
 }

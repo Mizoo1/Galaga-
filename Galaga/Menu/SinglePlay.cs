@@ -6,7 +6,31 @@ using System.Threading.Tasks;
 
 namespace Galaga.Menu
 {
-    public class SinglePlay
+    class SinglePlay : IGameState
     {
+
+        // Constructor
+        public SinglePlay(IntPtr window, IntPtr renderer)
+        {
+
+            Update();
+        }
+
+        // Method to display the single play screen
+        public void Update()
+        {
+
+        }
+
+        public void Draw()
+        {
+
+        }
+
+        // Method to handle player input
+        public void HandleInput()
+        {
+
+        }
     }
 }
