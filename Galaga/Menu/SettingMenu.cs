@@ -73,7 +73,7 @@ namespace Galaga.Menu
         // Method to display the settings screen
         public void Update()
         {
-
+            UpdateButtonPositions();
 
         }
 
@@ -103,6 +103,7 @@ namespace Galaga.Menu
                     GameState.SetState(new MainMenu(_window, _renderer));
                 }
 
+
                 if (e.type == SDL.SDL_EventType.SDL_KEYDOWN && e.key.keysym.sym == SDL.SDL_Keycode.SDLK_q)
                 {
                     // Quit the game
@@ -131,7 +132,18 @@ namespace Galaga.Menu
                         SDL.SDL_SetWindowFullscreen(_window, 0);
                     }
                 }
-                // Check if the player clicked on the back button
+                if (e.type == SDL.SDL_EventType.SDL_MOUSEBUTTONDOWN && e.button.button == SDL.SDL_BUTTON_LEFT)
+                {
+                    int x = e.button.x;
+                    int y = e.button.y;
+                    if (x >= _soundRect.x && x <= _soundRect.x + _soundRect.w &&
+                        y >= _soundRect.y && y <= _soundRect.y + _soundRect.h)
+                    {
+                        // Transition to the main menu state
+                        GameState.SetState(new MainMenu(_window, _renderer));
+                    }
+                }
+                // Check if the player clicked on the level button
                 if (e.type == SDL.SDL_EventType.SDL_MOUSEBUTTONDOWN && e.button.button == SDL.SDL_BUTTON_LEFT)
                 {
                     int x = e.button.x;
@@ -140,7 +152,7 @@ namespace Galaga.Menu
                         y >= _levelButtonRect.y && y <= _levelButtonRect.y + _levelButtonRect.h)
                     {
                         // Transition to the main menu state
-                        //TODO
+                        GameState.SetState(new LevelMenu(_window, _renderer));
                     }
                 }
                 // Check if the player clicked on the back button
@@ -155,6 +167,43 @@ namespace Galaga.Menu
                         GameState.SetState(new MainMenu(_window, _renderer));
                     }
                 }
+            }
+        }
+        private void UpdateButtonPositions()
+        {
+            int mouseX, mouseY;
+            SDL.SDL_GetMouseState(out mouseX, out mouseY);
+
+            if (mouseX >= _soundRect.x && mouseX <= _soundRect.x + _soundRect.w &&
+                mouseY >= _soundRect.y && mouseY <= _soundRect.y + _soundRect.h && _soundRect.x > 370)
+            {
+                // Mouse is hovering over the sound button
+                _soundRect.x -= 1; // Move the button to the left
+            }
+            else if (_soundRect.x < 400 )
+            {
+                _soundRect.x += 1; // Move the button back to its original position
+            }
+
+            // Repeat the same process for the other buttons
+            if (mouseX >= _levelButtonRect.x && mouseX <= _levelButtonRect.x + _levelButtonRect.w &&
+                mouseY >= _levelButtonRect.y && mouseY <= _levelButtonRect.y + _levelButtonRect.h && _levelButtonRect.x > 370)
+            {
+                _levelButtonRect.x -= 1;
+            }
+            else if (_levelButtonRect.x < 400)
+            {
+                _levelButtonRect.x += 1;
+            }
+
+            if (mouseX >= _backButtonRect.x && mouseX <= _backButtonRect.x + _backButtonRect.w &&
+                mouseY >= _backButtonRect.y && mouseY <= _backButtonRect.y + _backButtonRect.h && _backButtonRect .x > 370)
+            {
+                _backButtonRect.x -= 1;
+            }
+            else if (_backButtonRect.x < 400)
+            {
+                _backButtonRect.x += 1;
             }
         }
     }

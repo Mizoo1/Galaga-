@@ -75,6 +75,7 @@ namespace Galaga.Menu
         // Method to display the game screen
         public void Update()
         {
+            UpdateButtonPositions();
             // Poll for events
             SDL.SDL_Event e;
             while (SDL.SDL_PollEvent(out e) != 0)
@@ -182,6 +183,44 @@ namespace Galaga.Menu
                     }
                 }
             }
+        }
+        private void UpdateButtonPositions()
+        {
+            int mouseX, mouseY;
+            SDL.SDL_GetMouseState(out mouseX, out mouseY);
+
+            if (mouseX >= _singlePlayRect.x && mouseX <= _singlePlayRect.x + _singlePlayRect.w &&
+                mouseY >= _singlePlayRect.y && mouseY <= _singlePlayRect.y + _singlePlayRect.h && _singlePlayRect.x > 370)
+            {
+                // Mouse is hovering over the sound button
+                _singlePlayRect.x -= 1; // Move the button to the left
+            }
+            else if (_singlePlayRect.x < 400)
+            {
+                _singlePlayRect.x += 1; // Move the button back to its original position
+            }
+            if (mouseX >= _doublePlayRect.x && mouseX <= _doublePlayRect.x + _doublePlayRect.w &&
+                mouseY >= _doublePlayRect.y && mouseY <= _doublePlayRect.y + _doublePlayRect.h && _doublePlayRect.x > 370)
+            {
+                // Mouse is hovering over the sound button
+                _doublePlayRect.x -= 1; // Move the button to the left
+            }
+            else if (_doublePlayRect.x < 400)
+            {
+                _doublePlayRect.x += 1; // Move the button back to its original position
+            }
+            if (mouseX >= _backButtonRect.x && mouseX <= _backButtonRect.x + _backButtonRect.w &&
+                mouseY >= _backButtonRect.y && mouseY <= _backButtonRect.y + _backButtonRect.h && _backButtonRect.x > 370)
+            {
+                // Mouse is hovering over the sound button
+                _backButtonRect.x -= 1; // Move the button to the left
+            }
+            else if (_backButtonRect.x < 400)
+            {
+                _backButtonRect.x += 1; // Move the button back to its original position
+            }
+
+
         }
     }
 }

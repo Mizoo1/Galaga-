@@ -49,7 +49,11 @@ namespace Galaga.Menu
 
         public void Update()
         {
-
+            start.UpdateButtonPositions();
+            help.UpdateButtonPositions();
+            setting.UpdateButtonPositions();
+            exit.UpdateButtonPositions();
+            
         }
 
         public void Draw()

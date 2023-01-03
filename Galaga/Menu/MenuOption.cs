@@ -133,7 +133,7 @@ namespace Galaga.Menu
 
         public void Update()
         {
-
+            UpdateButtonPositions();
         }
         public void EnterStart(SDL.SDL_Event e)
         {
@@ -197,6 +197,24 @@ namespace Galaga.Menu
                     Environment.Exit(0);
                 }
             }
+        }
+
+        public void UpdateButtonPositions()
+        {
+            
+                int mouseX, mouseY;
+                SDL.SDL_GetMouseState(out mouseX, out mouseY);
+
+                if (mouseX >= Rect.x && mouseX <= Rect.x + Rect.w &&
+                    mouseY >= Rect.y && mouseY <= Rect.y + Rect.h && Rect.x > 370)
+                {
+                    Rect.x -= 1; 
+                }
+                else if (Rect.x < 400)
+                {
+                    Rect.x += 1; 
+                }
+            
         }
 
 
