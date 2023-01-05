@@ -135,7 +135,7 @@ namespace Galaga.Menu
                 mouseY >= _backButtonRect.y && mouseY <= _backButtonRect.y + _backButtonRect.h && _backButtonRect.x > 370)
             {
                 // Mouse is hovering over the sound button
-                _backButtonRect.x -= 1; // Move the button to the left
+                _backButtonRect.x -= 1; 
             }
             else if (_backButtonRect.x < 400)
             {

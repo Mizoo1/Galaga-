@@ -68,8 +68,10 @@ namespace Galaga.Menu
         // Method to handle player input
         public void HandleInput()
         {
+            
             foreach (MenuOption menuOption in options)
                 menuOption.HandleInput();
+            
         }
     }
 }

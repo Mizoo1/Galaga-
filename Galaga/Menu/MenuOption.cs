@@ -14,12 +14,14 @@ namespace Galaga.Menu
         private IntPtr _window;
         private SDL.SDL_Rect Rect;
         private String name;
+        Music music;
 
         public MenuOption(String name, IntPtr _renderer, IntPtr _window)
         {
             this.name = name;
             this._renderer = _renderer;
             this._window = _window;
+            //music = new Music("D:\\Muaaz\\Studim\\Semester 3\\c#\\Github\\Galaga-\\Galaga\\Assest\\AufschlagPadlle.wav");
         }
 
 
@@ -102,21 +104,25 @@ namespace Galaga.Menu
                 // Check if symbol X clicked 
                 if (e.type == SDL.SDL_EventType.SDL_QUIT)
                 {
+
                     // Quit the game
+                    //music.close();
                     SDL.SDL_Quit();
                     Environment.Exit(0);
                 }
                 // Check if the player pressed the q key
                 if (e.type == SDL.SDL_EventType.SDL_KEYDOWN && e.key.keysym.sym == SDL.SDL_Keycode.SDLK_q)
                 {
+                    
                     // Quit the game
                     SDL.SDL_Quit();
                     Environment.Exit(0);
                 }
-
+            
                 // Check if the player pressed the f key
                 if (e.type == SDL.SDL_EventType.SDL_KEYDOWN && e.key.keysym.sym == SDL.SDL_Keycode.SDLK_f)
                 {
+                    //music.playMusik();
                     // Toggle fullscreen mode
                     if ((SDL.SDL_GetWindowFlags(_window) & (uint)SDL.SDL_WindowFlags.SDL_WINDOW_FULLSCREEN) == 0)
                     {
@@ -139,6 +145,7 @@ namespace Galaga.Menu
         {
             if (e.type == SDL.SDL_EventType.SDL_MOUSEBUTTONDOWN && e.button.button == SDL.SDL_BUTTON_LEFT)
             {
+               // music.Play(1);
                 int x = e.button.x;
                 int y = e.button.y;
                 if (x >= 400 && x <= 400 + 150 &&
@@ -187,6 +194,7 @@ namespace Galaga.Menu
         {
             if (e.type == SDL.SDL_EventType.SDL_MOUSEBUTTONDOWN && e.button.button == SDL.SDL_BUTTON_LEFT)
             {
+                
                 int x = e.button.x;
                 int y = e.button.y;
                 if (x >= 400 && x <= 400 + 150 &&
@@ -202,21 +210,19 @@ namespace Galaga.Menu
         public void UpdateButtonPositions()
         {
             
-                int mouseX, mouseY;
-                SDL.SDL_GetMouseState(out mouseX, out mouseY);
+            int mouseX, mouseY;
+            SDL.SDL_GetMouseState(out mouseX, out mouseY);
 
-                if (mouseX >= Rect.x && mouseX <= Rect.x + Rect.w &&
-                    mouseY >= Rect.y && mouseY <= Rect.y + Rect.h && Rect.x > 370)
-                {
-                    Rect.x -= 1; 
-                }
-                else if (Rect.x < 400)
-                {
-                    Rect.x += 1; 
-                }
+            if (mouseX >= Rect.x && mouseX <= Rect.x + Rect.w &&
+                mouseY >= Rect.y && mouseY <= Rect.y + Rect.h && Rect.x > 370)
+            {
+                Rect.x -= 1;
+            }
+            else if (Rect.x < 400)
+            {
+                Rect.x += 1; 
+            }
             
         }
-
-
     }
 }

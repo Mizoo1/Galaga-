@@ -104,7 +104,6 @@ namespace Galaga.Menu
             }
         }
 
-
         public void Draw()
         {
             // Clear the renderer
@@ -155,11 +154,11 @@ namespace Galaga.Menu
                 mouseY >= _easyRect.y && mouseY <= _easyRect.y + _easyRect.h && _easyRect.x > 370)
             {
                 // Mouse is hovering over the sound button
-                _easyRect.x -= 1; // Move the button to the left
+                _easyRect.x -= 1; 
             }
             else if (_easyRect.x < 400)
             {
-                _easyRect.x += 1; // Move the button back to its original position
+                _easyRect.x += 1; 
             }
 
 

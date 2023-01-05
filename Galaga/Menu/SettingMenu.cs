@@ -23,10 +23,10 @@ namespace Galaga.Menu
         private IntPtr _hintergrungTexture;
         private SDL.SDL_Rect _hintergrungRect;
 
-
         // Constructor
         public SettingsMenu(IntPtr window, IntPtr renderer)
         {
+           
             _window = window;
             _renderer = renderer;
 
@@ -177,15 +177,15 @@ namespace Galaga.Menu
             if (mouseX >= _soundRect.x && mouseX <= _soundRect.x + _soundRect.w &&
                 mouseY >= _soundRect.y && mouseY <= _soundRect.y + _soundRect.h && _soundRect.x > 370)
             {
-                // Mouse is hovering over the sound button
-                _soundRect.x -= 1; // Move the button to the left
+                
+                _soundRect.x -= 1; 
             }
             else if (_soundRect.x < 400 )
             {
-                _soundRect.x += 1; // Move the button back to its original position
+                _soundRect.x += 1; 
             }
 
-            // Repeat the same process for the other buttons
+           
             if (mouseX >= _levelButtonRect.x && mouseX <= _levelButtonRect.x + _levelButtonRect.w &&
                 mouseY >= _levelButtonRect.y && mouseY <= _levelButtonRect.y + _levelButtonRect.h && _levelButtonRect.x > 370)
             {

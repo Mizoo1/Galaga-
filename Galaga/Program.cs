@@ -8,6 +8,8 @@ internal class Program
 {
     private static void Main(string[] args)
     {
+
+        
         #region Initialize SDL
         // Initialize SDL
         SDL_Init(SDL_INIT_EVERYTHING);
@@ -34,11 +36,11 @@ internal class Program
         // Set the initial game state to the main menu
         GameState.State = new MainMenu(window, renderer);
         #endregion
-       
         #region GameLoop
         // Run the game loop
         while (GameState.State != null)
         {
+            
             // Handle input
             GameState.State.HandleInput();
 
@@ -52,7 +54,7 @@ internal class Program
             SDL_RenderPresent(renderer);
         }
         #endregion
-
+        
         #region Clean up
         // Clean up
         SDL_DestroyRenderer(renderer);
