@@ -1,6 +1,6 @@
 ﻿namespace Galaga.Menu
 {
-    public interface IGameState
+    public interface IGameState 
     {
         void Update();
         void Draw();
