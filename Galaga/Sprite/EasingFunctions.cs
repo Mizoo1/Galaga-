@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Galaga.Sprite
 {
-    internal class Class1
+    public class Class1
     {
     }
 }

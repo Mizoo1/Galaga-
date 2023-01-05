@@ -6,7 +6,21 @@ using System.Threading.Tasks;
 
 namespace Galaga.Sprite
 {
-    internal class Enemy
+    public class Enemy : Sprite
     {
+        public List<Enemy> Enemies;
+        public float enemyRadius;
+        public int directionX;
+        public int directionY;
+        public Enemy(IntPtr _texture, int x, int y, int WSize, int HSize) : base(_texture, x, y, WSize, HSize)
+        {
+            Enemies = new List<Enemy>();
+        }
+        public float getEnemyRadius()
+        {
+            //TODO
+            return enemyRadius;
+        }
+
     }
 }
