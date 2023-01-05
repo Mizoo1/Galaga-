@@ -8,18 +8,18 @@ namespace Galaga.Menu
 {
     class SinglePlay : IGameState
     {
-
+        private Game Verwalten;
         // Constructor
         public SinglePlay(IntPtr window, IntPtr renderer)
         {
-
+            Verwalten = new Game(window, renderer);
             Update();
         }
 
         // Method to display the single play screen
         public void Update()
         {
-
+            Verwalten.Setup();
         }
 
         public void Draw()
