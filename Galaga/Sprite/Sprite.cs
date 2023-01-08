@@ -7,7 +7,7 @@ using SDL2;
 
 namespace Galaga.Sprite
 {
-    public class Sprite
+    public class Sprite 
     {
         public SDL.SDL_Rect sprite;
         public IntPtr _texture;
@@ -26,7 +26,8 @@ namespace Galaga.Sprite
             this.X = x;
             this.Y = y;
             this._texture = _texture;
-            
+            this.Velocity = new Vector2D();
+
         }
         public void LoadContent()
         {

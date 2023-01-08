@@ -30,9 +30,10 @@ namespace Galaga.Sprite
         // Dictionary to store all textures and their corresponding file paths
         private Dictionary<string, string> textureFilePaths = new Dictionary<string, string>()
         {
-
+            {"EnemyFighter", "D:\\One\\Desktop\\game\\PPong - Kopie\\PPong\\Assest\\EnemyFighter.png"},
             {"Player", "D:\\One\\Desktop\\game\\PPong - Kopie\\PPong\\Assest\\Flugzeug.png"},
-
+            {"Enemy", "D:\\One\\Desktop\\game\\PPong - Kopie\\PPong\\Assest\\enemy.png"},
+            {"Laser", "D:\\One\\Desktop\\game\\PPong - Kopie\\PPong\\Assest\\laser.png"},
         };
         public Game01(IntPtr window, IntPtr randerer)
         {
@@ -67,9 +68,11 @@ namespace Galaga.Sprite
         public void initialize()
         {
             _hintergrund = SDL_image.IMG_Load("D:\\One\\Desktop\\game\\PPong - Kopie\\PPong\\Assest\\Sterne.jpg");
-
+            IntPtr EnemyFighter = LoadTexture(textureFilePaths["EnemyFighter"]);
             IntPtr playerTexture = LoadTexture(textureFilePaths["Player"]);
-
+            IntPtr Enemy = LoadTexture(textureFilePaths["Enemy"]);
+            IntPtr Laser = LoadTexture(textureFilePaths["Laser"]);
+            player1 = new Player(playerTexture, new Input(SDL_Scancode.SDL_SCANCODE_W, SDL_Scancode.SDL_SCANCODE_S, SDL_Scancode.SDL_SCANCODE_A, SDL_Scancode.SDL_SCANCODE_D, SDL.SDL_Keycode.SDLK_SPACE));
             _hintergrundTexture = SDL.SDL_CreateTextureFromSurface(randerer, _hintergrund); ;
            
 
@@ -82,7 +85,7 @@ namespace Galaga.Sprite
         }
         public void HandleInput()
         {
-            //TODO
+            player1.HandleInput(surface, window, randerer);
         }
         public void Update()
         {
@@ -93,7 +96,7 @@ namespace Galaga.Sprite
             while (running)
             {
                 HandleInput();
-
+                player1.Update(sprites, surface, window, randerer);
                 LoadContent();
 
                 #region Beginn
@@ -113,7 +116,7 @@ namespace Galaga.Sprite
                     w = 640,
                     h = 480
                 };
-                
+                running = player1.getRunning();
                 // Erstellen Sie eine Texture aus der Surface
                 // Rendere Hintergrund
                 SDL.SDL_SetRenderDrawColor(randerer, 0, 0, 0, 255);
@@ -139,8 +142,8 @@ namespace Galaga.Sprite
         {
 
 
-            //player1.loadContent();
-
+            player1.loadContent();
+            sprites.Add(player1);
             #region addInTheList
             sprites.Add(player1);
             
@@ -149,7 +152,7 @@ namespace Galaga.Sprite
         public void Draw()
         {
 
-            
+            player1.draw(surface, randerer);
 
 
         }

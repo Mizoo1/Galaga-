@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Galaga
+namespace Galaga.Sprite
 {
     public class Vector2D
     {
