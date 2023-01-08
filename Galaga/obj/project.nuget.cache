@@ -1,14 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "XwPvMR3E5SK72oejy2km3PmlXq3GG23VE4B7mQk9UKHl27uRlBNztwrXAyONmJlifUGpJ6zoZ44WBEKPL+/rlg==",
+  "dgSpecHash": "x0B8ygg+NaSyteVu1cL0xlgNIMIoN3MGwX8CFFkldiI05Q+qUYm8erqYLxXKkDc38InXSBqTcw58iU8HUfFt7A==",
   "success": true,
-  "projectFilePath": "\\\\Mac\\Home\\Desktop\\Semester 3\\Prog\\Galaga-\\Galaga\\Galaga.csproj",
+  "projectFilePath": "D:\\Muaaz\\Studim\\Semester 3\\c#\\Github\\Galaga-\\Galaga\\Galaga.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\nourmac\\.nuget\\packages\\sayers.sdl2.core\\1.0.11\\sayers.sdl2.core.1.0.11.nupkg.sha512",
-    "C:\\Users\\nourmac\\.nuget\\packages\\microsoft.netcore.app.host.win-arm64\\5.0.17\\microsoft.netcore.app.host.win-arm64.5.0.17.nupkg.sha512",
-    "C:\\Users\\nourmac\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\5.0.0\\microsoft.aspnetcore.app.ref.5.0.0.nupkg.sha512",
-    "C:\\Users\\nourmac\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\5.0.0\\microsoft.windowsdesktop.app.ref.5.0.0.nupkg.sha512",
-    "C:\\Users\\nourmac\\.nuget\\packages\\microsoft.netcore.app.ref\\5.0.0\\microsoft.netcore.app.ref.5.0.0.nupkg.sha512"
+    "C:\\Users\\mouaz\\.nuget\\packages\\sayers.sdl2.core\\1.0.11\\sayers.sdl2.core.1.0.11.nupkg.sha512"
   ],
   "logs": []
 }
