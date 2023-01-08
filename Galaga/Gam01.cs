@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Galaga.Menu;
 using SDL2;
 using static SDL2.SDL;
 
@@ -30,10 +31,10 @@ namespace Galaga.Sprite
         // Dictionary to store all textures and their corresponding file paths
         private Dictionary<string, string> textureFilePaths = new Dictionary<string, string>()
         {
-            {"EnemyFighter", "D:\\One\\Desktop\\game\\PPong - Kopie\\PPong\\Assest\\EnemyFighter.png"},
-            {"Player", "D:\\One\\Desktop\\game\\PPong - Kopie\\PPong\\Assest\\Flugzeug.png"},
-            {"Enemy", "D:\\One\\Desktop\\game\\PPong - Kopie\\PPong\\Assest\\enemy.png"},
-            {"Laser", "D:\\One\\Desktop\\game\\PPong - Kopie\\PPong\\Assest\\laser.png"},
+            {"EnemyFighter", "D:\\Muaaz\\Studim\\Semester 3\\c#\\Github\\Galaga-\\Galaga\\Assest\\EnemyFighter.png"},
+            {"Player", "D:\\Muaaz\\Studim\\Semester 3\\c#\\Github\\Galaga-\\Galaga\\Assest\\Flugzeug.bmp"},
+            {"Enemy", "D:\\Muaaz\\Studim\\Semester 3\\c#\\Github\\Galaga-\\Galaga\\Assest\\enemy.png"},
+            {"Laser", "D:\\Muaaz\\Studim\\Semester 3\\c#\\Github\\Galaga-\\Galaga\\Assest\\laser.png"},
         };
         public Game01(IntPtr window, IntPtr randerer)
         {
@@ -67,16 +68,19 @@ namespace Galaga.Sprite
         }
         public void initialize()
         {
-            _hintergrund = SDL_image.IMG_Load("D:\\One\\Desktop\\game\\PPong - Kopie\\PPong\\Assest\\Sterne.jpg");
+            _hintergrund = SDL_image.IMG_Load("D:\\Muaaz\\Studim\\Semester 3\\c#\\Github\\Galaga-\\Galaga\\Assest\\Sterne.jpg");
             IntPtr EnemyFighter = LoadTexture(textureFilePaths["EnemyFighter"]);
             IntPtr playerTexture = LoadTexture(textureFilePaths["Player"]);
             IntPtr Enemy = LoadTexture(textureFilePaths["Enemy"]);
             IntPtr Laser = LoadTexture(textureFilePaths["Laser"]);
-            player1 = new Player(playerTexture, new Input(SDL_Scancode.SDL_SCANCODE_W, SDL_Scancode.SDL_SCANCODE_S, SDL_Scancode.SDL_SCANCODE_A, SDL_Scancode.SDL_SCANCODE_D, SDL.SDL_Keycode.SDLK_SPACE));
             _hintergrundTexture = SDL.SDL_CreateTextureFromSurface(randerer, _hintergrund); ;
-           
-
+            player1 = new Player(playerTexture, new Input(SDL_Scancode.SDL_SCANCODE_W, SDL_Scancode.SDL_SCANCODE_S, SDL_Scancode.SDL_SCANCODE_A, SDL_Scancode.SDL_SCANCODE_D, SDL.SDL_Keycode.SDLK_SPACE));
+            laser = new Laser(Laser);
+            enemyFighter = new EnemyFighter(EnemyFighter, 0, 0, laser);
+            enemSprite = new EnemSprite(Enemy, 200, 100, laser);
+            wave = new Wave(enemSprite, enemyFighter);
             sprites = new List<Sprite>();
+            
         }
         public void Setup()
         {
@@ -85,7 +89,8 @@ namespace Galaga.Sprite
         }
         public void HandleInput()
         {
-            player1.HandleInput(surface, window, randerer);
+            player1.HandleInput(surface, window, randerer, laser);
+
         }
         public void Update()
         {
@@ -96,8 +101,14 @@ namespace Galaga.Sprite
             while (running)
             {
                 HandleInput();
-                player1.Update(sprites, surface, window, randerer);
+                elapsedTicks = SDL.SDL_GetTicks() - startTicks;
+                var gameTime = new GameTime(elapsedTicks);
                 LoadContent();
+                wave.Update(surface, randerer, gameTime, null, player1);
+                player1.Update(sprites, surface, window, randerer, laser);
+                laser.UpdateLaserShotsFromEnemy(player1, null, sprites);
+                laser.UpdateLaserShots(enemSprite);
+                laser.UpdateLaserShots(enemyFighter);
 
                 #region Beginn
                 // Definieren Sie die Position und Größe des Rechtecks
@@ -143,17 +154,21 @@ namespace Galaga.Sprite
 
 
             player1.loadContent();
-            sprites.Add(player1);
+
+            laser.loadContent();
+            wave.LoadContent();
             #region addInTheList
             sprites.Add(player1);
-            
+            foreach (Enemy enemy in enemSprite.Enemies)
+                sprites.Add(enemy);
             #endregion
         }
         public void Draw()
         {
 
             player1.draw(surface, randerer);
-
+            laser.DrawLaser(surface, randerer);
+            wave.Draw(surface, randerer);
 
         }
         public void cleanUp()

@@ -56,24 +56,31 @@ namespace Galaga.Sprite
         #region Collisoin
         public bool IsTouchingLeft(Sprite sprite)
         {
-            return true;
-            //TODO
+            return Right + Velocity.X > sprite.Left &&
+                Left < sprite.Left &&
+                Bottom > sprite.Top &&
+                Top < sprite.Bottom;
         }
         public bool IsTouchingRight(Sprite sprite)
         {
-            return true;
-            //TODO
+            return Left + Velocity.X < sprite.Right &&
+              Right > sprite.Right &&
+              Bottom > sprite.Top &&
+              Top < sprite.Bottom;
         }
         public bool IsTouchingTop(Sprite sprite)
         {
-            return true;
-            //TODO
-
+            return Bottom + Velocity.Y > sprite.Top &&
+              Top < sprite.Top &&
+              Right > sprite.Left &&
+              Left < sprite.Right;
         }
         public bool IsTouchingBottom(Sprite sprite)
         {
-            return true;
-            //TODO
+            return Top + Velocity.Y < sprite.Bottom &&
+              Bottom > sprite.Bottom &&
+              Right > sprite.Left &&
+              Left < sprite.Right;
         }
 
         public float getEnemyRadius()

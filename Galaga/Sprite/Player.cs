@@ -47,9 +47,9 @@ namespace Galaga.Sprite
         }
         public bool getRunning() { return running; }
         public SDL.SDL_Rect getSmallSprite() { return smallSprite; }
-        public void Update(List<Sprite> sprites, IntPtr surface, IntPtr _window, IntPtr _renderer)
+        public void Update(List<Sprite> sprites, IntPtr surface, IntPtr _window, IntPtr _renderer, Laser laser)
         {
-            HandleInput(surface, _window, _renderer);
+            HandleInput(surface, _window, _renderer, laser);
 
 
             foreach (var sprite in sprites)
@@ -89,7 +89,7 @@ namespace Galaga.Sprite
             if (X < 640 - sprite.w) Velocity.X += (int)speed;
         }
 
-        public IntPtr HandleInput(IntPtr surface, IntPtr _window, IntPtr _renderer)
+        public IntPtr HandleInput(IntPtr surface, IntPtr _window, IntPtr _renderer, Laser laser)
         {
             // Verarbeite Ereignisse
             SDL.SDL_Event e;
@@ -113,7 +113,7 @@ namespace Galaga.Sprite
                 }
                 if (e.type == SDL.SDL_EventType.SDL_KEYDOWN && e.key.keysym.sym == input.fire)
                 {
-                    //TODO
+                        laser.FireLaser(this);
                 }
                 // Check if the player pressed the f key
                 if (e.type == SDL.SDL_EventType.SDL_KEYDOWN && e.key.keysym.sym == SDL.SDL_Keycode.SDLK_f)
