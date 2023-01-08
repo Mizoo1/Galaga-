@@ -3,7 +3,7 @@ using Galaga.Menu;
 using System;
 using Galaga;
 using System.Xml.Linq;
-namespace Pong;
+namespace Galaga;
 internal class Program 
 {
     private static void Main(string[] args)
