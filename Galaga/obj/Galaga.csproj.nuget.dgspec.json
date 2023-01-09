@@ -1,27 +1,25 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Muaaz\\Studim\\Semester 3\\c#\\Github\\Galaga-\\Galaga\\Galaga.csproj": {}
+    "/Users/nourmac/Desktop/Semester 3/Prog /Galaga-/Galaga/Galaga.csproj": {}
   },
   "projects": {
-    "D:\\Muaaz\\Studim\\Semester 3\\c#\\Github\\Galaga-\\Galaga\\Galaga.csproj": {
+    "/Users/nourmac/Desktop/Semester 3/Prog /Galaga-/Galaga/Galaga.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Muaaz\\Studim\\Semester 3\\c#\\Github\\Galaga-\\Galaga\\Galaga.csproj",
+        "projectUniqueName": "/Users/nourmac/Desktop/Semester 3/Prog /Galaga-/Galaga/Galaga.csproj",
         "projectName": "Galaga",
-        "projectPath": "D:\\Muaaz\\Studim\\Semester 3\\c#\\Github\\Galaga-\\Galaga\\Galaga.csproj",
-        "packagesPath": "C:\\Users\\mouaz\\.nuget\\packages\\",
-        "outputPath": "D:\\Muaaz\\Studim\\Semester 3\\c#\\Github\\Galaga-\\Galaga\\obj\\",
+        "projectPath": "/Users/nourmac/Desktop/Semester 3/Prog /Galaga-/Galaga/Galaga.csproj",
+        "packagesPath": "/Users/nourmac/.nuget/packages/",
+        "outputPath": "/Users/nourmac/Desktop/Semester 3/Prog /Galaga-/Galaga/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\mouaz\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "/Users/nourmac/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net6.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -61,7 +59,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.101\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/7.0.101/RuntimeIdentifierGraph.json"
         }
       }
     }

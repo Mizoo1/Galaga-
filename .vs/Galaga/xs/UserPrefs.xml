@@ -1,0 +1,29 @@
+﻿<Properties StartupConfiguration="{96A126E9-40C9-4222-8333-6CD313415D93}|Default">
+  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.Workbench ActiveDocument="../../../../../../usr/local/share/dotnet/sdk/7.0.101/Sdks/Microsoft.NET.Sdk/targets/Microsoft.PackageDependencyResolution.targets">
+    <Files>
+      <File FileName="Galaga/Program.cs" Line="19" Column="10" />
+      <File FileName="../../../../../../usr/local/share/dotnet/sdk/7.0.101/Sdks/Microsoft.NET.Sdk/targets/Microsoft.PackageDependencyResolution.targets" Line="267" Column="5" />
+      <File FileName="Galaga/Constants.cs" Line="1" Column="1" />
+      <File FileName="Galaga/Sprite/Wave.cs" Line="1" Column="1" />
+      <File FileName="Galaga/Sprite/Rect.cs" Line="7" Column="9" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="Galaga" expanded="True">
+            <Node name="Galaga" expanded="True">
+              <Node name="Menu" expanded="True" />
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.ItemProperties.Galaga PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>
