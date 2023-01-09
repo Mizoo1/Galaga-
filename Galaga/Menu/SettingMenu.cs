@@ -9,4 +9,5 @@ namespace Galaga.Menu
     internal class SettingMenu
     {
     }
+    
 }

@@ -8,5 +8,7 @@ namespace Galaga.Menu
 {
     internal class StartMenu
     {
+
+        
     }
 }
