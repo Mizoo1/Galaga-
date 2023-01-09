@@ -1,30 +1,30 @@
 {
   "format": 1,
   "restore": {
-    "/Users/nourmac/Desktop/Semester 3/Prog /Galaga-/Galaga/Galaga.csproj": {}
+    "/Users/nourmac/Desktop/Semester 3/Prog /Galaga-/Galaga-.csproj": {}
   },
   "projects": {
-    "/Users/nourmac/Desktop/Semester 3/Prog /Galaga-/Galaga/Galaga.csproj": {
+    "/Users/nourmac/Desktop/Semester 3/Prog /Galaga-/Galaga-.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/nourmac/Desktop/Semester 3/Prog /Galaga-/Galaga/Galaga.csproj",
-        "projectName": "Galaga",
-        "projectPath": "/Users/nourmac/Desktop/Semester 3/Prog /Galaga-/Galaga/Galaga.csproj",
+        "projectUniqueName": "/Users/nourmac/Desktop/Semester 3/Prog /Galaga-/Galaga-.csproj",
+        "projectName": "Galaga-",
+        "projectPath": "/Users/nourmac/Desktop/Semester 3/Prog /Galaga-/Galaga-.csproj",
         "packagesPath": "/Users/nourmac/.nuget/packages/",
-        "outputPath": "/Users/nourmac/Desktop/Semester 3/Prog /Galaga-/Galaga/obj/",
+        "outputPath": "/Users/nourmac/Desktop/Semester 3/Prog /Galaga-/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/Users/nourmac/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
-          "net6.0"
+          "net7.0"
         ],
         "sources": {
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
-          "net6.0": {
-            "targetAlias": "net6.0",
+          "net7.0": {
+            "targetAlias": "net7.0",
             "projectReferences": {}
           }
         },
@@ -35,12 +35,12 @@
         }
       },
       "frameworks": {
-        "net6.0": {
-          "targetAlias": "net6.0",
+        "net7.0": {
+          "targetAlias": "net7.0",
           "dependencies": {
-            "Sayers.SDL2.Core": {
+            "SDL2": {
               "target": "Package",
-              "version": "[1.0.11, )"
+              "version": "[2.0.5, )"
             }
           },
           "imports": [
