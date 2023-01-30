@@ -1,5 +1,0 @@
-\\Mac\Home\Desktop\Semester 3\Prog\Galaga-\Galaga\obj\Debug\net5.0\Galaga.csproj.AssemblyReference.cache
-\\Mac\Home\Desktop\Semester 3\Prog\Galaga-\Galaga\obj\Debug\net5.0\Galaga.GeneratedMSBuildEditorConfig.editorconfig
-\\Mac\Home\Desktop\Semester 3\Prog\Galaga-\Galaga\obj\Debug\net5.0\Galaga.AssemblyInfoInputs.cache
-\\Mac\Home\Desktop\Semester 3\Prog\Galaga-\Galaga\obj\Debug\net5.0\Galaga.AssemblyInfo.cs
-\\Mac\Home\Desktop\Semester 3\Prog\Galaga-\Galaga\obj\Debug\net5.0\Galaga.csproj.CoreCompileInputs.cache
