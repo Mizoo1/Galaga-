@@ -62,7 +62,7 @@ namespace Galaga.Menu
 
             // Load the game texture and set the game rectangle
             _hintergrungTexture = SDL_image.IMG_LoadTexture(_renderer,
-                "D:\\Muaaz\\Studim\\Semester 3\\c#\\Github\\Galaga-\\Galaga\\Assest\\Background.png");
+                "./Assest/Background.png");
             _hintergroundRect = new SDL.SDL_Rect()
             {
                 x = 0,
@@ -71,7 +71,7 @@ namespace Galaga.Menu
                 h = 480
             };
             _singlePlayTexture = SDL_image.IMG_LoadTexture(_renderer,
-                "D:\\Muaaz\\Studim\\Semester 3\\c#\\Github\\Galaga-\\Galaga\\Assest\\Play.png");
+                "./Assest/Play.png");
             _singlePlayRect = new SDL.SDL_Rect()
             {
                 x = 400,
@@ -81,7 +81,7 @@ namespace Galaga.Menu
             };
 
             _doublePlayTexture = SDL_image.IMG_LoadTexture(_renderer,
-                "D:\\Muaaz\\Studim\\Semester 3\\c#\\Github\\Galaga-\\Galaga\\Assest\\Multiplay.png");
+                "./Assest/Multiplay.png");
             _doublePlayRect = new SDL.SDL_Rect()
             {
                 x = 400,
@@ -90,7 +90,7 @@ namespace Galaga.Menu
                 h = 50
             };
             _backTexture = SDL_image.IMG_LoadTexture(_renderer,
-                "D:\\Muaaz\\Studim\\Semester 3\\c#\\Github\\Galaga-\\Galaga\\Assest\\Back.png");
+                "./Assest/Back.png");
             _backButtonRect = new SDL.SDL_Rect()
             {
                 x = 400,

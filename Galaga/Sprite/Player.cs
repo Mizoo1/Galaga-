@@ -45,9 +45,9 @@ namespace Galaga.Sprite
             Radius = 35;
             this.input = input;
             Mana = 100;
-            music_heal = new Music("D:\\Muaaz\\Studim\\Semester 3\\c#\\Github\\Galaga-\\Galaga\\Assest\\heal.mp3");
-            music_shot = new Music("D:\\Muaaz\\Studim\\Semester 3\\c#\\Github\\Galaga-\\Galaga\\Assest\\collision.mp3");
-            music_explosion  = new Music("D:\\Muaaz\\Studim\\Semester 3\\c#\\Github\\Galaga-\\Galaga\\Assest\\explosion.mp3");
+            music_heal = new Music("./Assest/heal.mp3");
+            music_shot = new Music("./Assest/collision.mp3");
+            music_explosion  = new Music("./Assest/explosion.mp3");
         }
         public Player(IntPtr _texture, Input input, int x, int y) : base(_texture, x, y, 40, 40)
         {

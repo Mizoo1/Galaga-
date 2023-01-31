@@ -37,7 +37,7 @@ namespace Galaga.Menu
             this.name = name;
             this._renderer = _renderer;
             this._window = _window;
-            music = new Music("D:\\Muaaz\\Studim\\Semester 3\\c#\\Github\\Galaga-\\Galaga\\Assest\\select.mp3");
+            music = new Music("./Assest/select.mp3");
         }
 
 

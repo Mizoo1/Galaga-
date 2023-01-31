@@ -72,16 +72,16 @@ namespace Galaga.Menu
         {
             _window = window;
             _renderer = renderer;
-            music = new Music("D:\\Muaaz\\Studim\\Semester 3\\c#\\Github\\Galaga-\\Galaga\\Assest\\select.mp3");
+            music = new Music("./Assest/select.mp3");
             if (SDL_ttf.TTF_Init() != 0)
             {
                 throw new Exception("Failed to initialize SDL_ttf: " + SDL_ttf.TTF_GetError());
             }
-            _font = new Font("D:\\Muaaz\\Studim\\Semester 3\\c#\\Github\\Galaga-\\Galaga\\Assest\\Lato-Italic.ttf", 22);
-            _font_2 = new Font("D:\\Muaaz\\Studim\\Semester 3\\c#\\Github\\Galaga-\\Galaga\\Assest\\Lato-Italic.ttf", 30);
+            _font = new Font("./Assest/Lato-Italic.ttf", 22);
+            _font_2 = new Font("./Assest/Lato-Italic.ttf", 30);
 
             _hintergrungTexture = SDL_image.IMG_LoadTexture(_renderer,
-                "D:\\Muaaz\\Studim\\Semester 3\\c#\\Github\\Galaga-\\Galaga\\Assest\\rr.jpg");
+                "./Assest/rr.jpg");
 
             _hintergrungRect = new SDL.SDL_Rect()
             {
@@ -93,7 +93,7 @@ namespace Galaga.Menu
 
             // Load the help texture and set the help rectangle
             _backTexture = SDL_image.IMG_LoadTexture(_renderer,
-                "D:\\Muaaz\\Studim\\Semester 3\\c#\\Github\\Galaga-\\Galaga\\Assest\\Back.png");
+                "./Assest/Back.png");
             _backButtonRect = new SDL.SDL_Rect()
             {
                 x = 400,

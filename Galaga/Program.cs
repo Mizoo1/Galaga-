@@ -37,7 +37,7 @@ internal class Program
             SDL_WindowFlags.SDL_WINDOW_SHOWN
         );
         // Load the icon image
-        string LOGO = "D:\\Muaaz\\Studim\\Semester 3\\c#\\Github\\Galaga-\\Galaga\\Assest\\Flugzeug.bmp";
+        string LOGO = "./Assest/Flugzeug.bmp";
         var icon = SDL_LoadBMP(LOGO);
 
         // Set the _window icon

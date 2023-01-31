@@ -68,10 +68,10 @@ namespace Galaga.Sprite
         // Dictionary to store all textures and their corresponding file paths
         private Dictionary<string, string> textureFilePaths = new Dictionary<string, string>()
         {
-            {"EnemyFighter", "D:\\One\\Desktop\\game\\PPong - Kopie\\PPong\\Assest\\EnemyFighter.png"},
-            {"Player", "D:\\One\\Desktop\\game\\PPong - Kopie\\PPong\\Assest\\Flugzeug.png"},
-            {"Enemy", "D:\\One\\Desktop\\game\\PPong - Kopie\\PPong\\Assest\\enemy.png"},
-            {"Laser", "D:\\One\\Desktop\\game\\PPong - Kopie\\PPong\\Assest\\laser.png"},
+            {"EnemyFighter", "./Assest/EnemyFighter.png"},
+            {"Player", "./Assest/Flugzeug.png"},
+            {"Enemy", "./Assest/enemy.png"},
+            {"Laser", "./Assest/laser.png"},
         };
         public DoublePlay(IntPtr window, IntPtr randerer)
         {
@@ -81,7 +81,7 @@ namespace Galaga.Sprite
             {
                 throw new Exception("Failed to initialize SDL_ttf: " + SDL_ttf.TTF_GetError());
             }
-            _font = new Font("D:\\Muaaz\\Studim\\Semester 3\\c#\\Github\\Galaga-\\Galaga\\Assest\\Lato-Italic.ttf", 20);
+            _font = new Font("./Assest/Lato-Italic.ttf", 20);
             initialize();
             stopwatch.Start();
         }
@@ -111,7 +111,7 @@ namespace Galaga.Sprite
         }
         public void initialize()
         {
-            _hintergrund = SDL_image.IMG_Load("D:\\Muaaz\\Studim\\Semester 3\\c#\\Github\\Galaga-\\Galaga\\Assest\\Sterne.jpg");
+            _hintergrund = SDL_image.IMG_Load("./Assest/Sterne.jpg");
             IntPtr EnemyFighter = LoadTexture(textureFilePaths["EnemyFighter"]);
             IntPtr playerTexture = LoadTexture(textureFilePaths["Player"]);
             IntPtr Enemy = LoadTexture(textureFilePaths["Enemy"]);

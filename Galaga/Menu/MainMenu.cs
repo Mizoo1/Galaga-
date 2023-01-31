@@ -60,12 +60,12 @@ namespace Galaga.Menu
         {
             _window = window;
             _renderer = renderer;
-            music = new Music("D:\\Muaaz\\Studim\\Semester 3\\c#\\Github\\Galaga-\\Galaga\\Assest\\select.mp3");
+            music = new Music("./Assest/select.mp3");
             if (SDL_ttf.TTF_Init() != 0)
             {
                 throw new Exception("Failed to initialize SDL_ttf: " + SDL_ttf.TTF_GetError());
             }
-            _font = new Font("D:\\Muaaz\\Studim\\Semester 3\\c#\\Github\\Galaga-\\Galaga\\Assest\\Lato-Italic.ttf", 40);
+            _font = new Font("./Assest/Lato-Italic.ttf", 40);
             if (File.Exists("highscore.txt"))
             {
                 String highscoreString = File.ReadAllText("highscore.txt");

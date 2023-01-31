@@ -27,7 +27,7 @@ namespace Galaga.Objects
         #region creating Items	
         public void CreateItem()
         {
-            item.surface = SDL_image.IMG_Load("D:\\Muaaz\\Studim\\Semester 3\\c#\\Github\\Galaga-\\Galaga\\Assest\\heal.png");
+            item.surface = SDL_image.IMG_Load("./Assest/heal.png");
             IntPtr holeTexture = SDL.SDL_CreateTextureFromSurface(_randerer, item.surface);
             Heal heal = new Heal(holeTexture, 100, 60, 50, 50);
             item.items.Add(heal);

@@ -31,17 +31,17 @@ namespace Galaga.Utility
         /// </summary>
         public Dictionary<string, string> imagePaths = new Dictionary<string, string>()
         {
-            {"background", "D:\\Muaaz\\Studim\\Semester 3\\c#\\Github\\Galaga-\\Galaga\\Assest\\Background.png"},
-            {"start", "D:\\Muaaz\\Studim\\Semester 3\\c#\\Github\\Galaga-\\Galaga\\Assest\\Start.png"},
-            {"setting","D:\\Muaaz\\Studim\\Semester 3\\c#\\Github\\Galaga-\\Galaga\\Assest\\Setting.png" },
-            {"help","D:\\Muaaz\\Studim\\Semester 3\\c#\\Github\\Galaga-\\Galaga\\Assest\\Help.png" },
-            {"exit", "D:\\Muaaz\\Studim\\Semester 3\\c#\\Github\\Galaga-\\Galaga\\Assest\\Quit.png"},
-            {"play","D:\\Muaaz\\Studim\\Semester 3\\c#\\Github\\Galaga-\\Galaga\\Assest\\Play.png"},
-            {"multiPlay","D:\\Muaaz\\Studim\\Semester 3\\c#\\Github\\Galaga-\\Galaga\\Assest\\Multiplay.png"},
-            {"Music_ON","D:\\Muaaz\\Studim\\Semester 3\\c#\\Github\\Galaga-\\Galaga\\Assest\\music_on.png"},
-            {"Music_OFF","D:\\Muaaz\\Studim\\Semester 3\\c#\\Github\\Galaga-\\Galaga\\Assest\\music_off.png"},
-            {"galaga","D:\\Muaaz\\Studim\\Semester 3\\c#\\Github\\Galaga-\\Galaga\\Assest\\galaga.png"},
-            {"back","D:\\Muaaz\\Studim\\Semester 3\\c#\\Github\\Galaga-\\Galaga\\Assest\\Back.png"}
+            {"background", "./Assest/Background.png"},
+            {"start", "./Assest/Start.png"},
+            {"setting","./Assest/Setting.png" },
+            {"help","./Assest/Help.png" },
+            {"exit", "./Assest/Quit.png"},
+            {"play","./Assest/Play.png"},
+            {"multiPlay","./Assest/Multiplay.png"},
+            {"Music_ON","./Assest/music_on.png"},
+            {"Music_OFF","./Assest/music_off.png"},
+            {"galaga","./Assest/galaga.png"},
+            {"back","./Assest/Back.png"}
 
         };
         #endregion

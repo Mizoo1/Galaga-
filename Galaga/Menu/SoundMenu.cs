@@ -57,8 +57,8 @@ namespace Galaga.Menu
             _renderer = renderer;
 
             _hintergrungTexture = SDL_image.IMG_LoadTexture(_renderer,
-                "D:\\Muaaz\\Studim\\Semester 3\\c#\\Github\\Galaga-\\Galaga\\Assest\\Background.png");
-            music = new Music("D:\\Muaaz\\Studim\\Semester 3\\c#\\Github\\Galaga-\\Galaga\\Assest\\select.mp3");
+                "./Assest/Background.png");
+            music = new Music("./Assest/select.mp3");
 
             _hintergrungRect = new SDL.SDL_Rect()
             {
@@ -69,7 +69,7 @@ namespace Galaga.Menu
             };
             // Load the settings texture and set the settings rectangle
             _music_onTexture = SDL_image.IMG_LoadTexture(_renderer,
-                "D:\\Muaaz\\Studim\\Semester 3\\c#\\Github\\Galaga-\\Galaga\\Assest\\music_on.png");
+                "./Assest/music_on.png");
             _music_onRect = new SDL.SDL_Rect()
             {
                 x = 400,
@@ -78,7 +78,7 @@ namespace Galaga.Menu
                 h = 50
             };
             _music_offTexture = SDL_image.IMG_LoadTexture(_renderer,
-                "D:\\Muaaz\\Studim\\Semester 3\\c#\\Github\\Galaga-\\Galaga\\Assest\\music_off.png");
+                "./Assest/music_off.png");
             _music_offRect = new SDL.SDL_Rect()
             {
                 x = 400,
@@ -87,7 +87,7 @@ namespace Galaga.Menu
                 h = 50
             };
             _backTexture = SDL_image.IMG_LoadTexture(_renderer,
-                "D:\\Muaaz\\Studim\\Semester 3\\c#\\Github\\Galaga-\\Galaga\\Assest\\Back.png");
+                "./Assest/Back.png");
             _backButtonRect = new SDL.SDL_Rect()
             {
                 x = 400,

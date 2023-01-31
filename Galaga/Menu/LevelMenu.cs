@@ -59,7 +59,7 @@ namespace Galaga.Menu
             _renderer = renderer;
 
             _hintergrungTexture = SDL_image.IMG_LoadTexture(_renderer,
-                "D:\\Muaaz\\Studim\\Semester 3\\c#\\Github\\Galaga-\\Galaga\\Assest\\Background.png");
+                "./Assest/Background.png");
 
             _hintergrungRect = new SDL.SDL_Rect()
             {
@@ -70,7 +70,7 @@ namespace Galaga.Menu
             };
             // Load the level menu textures and set the level menu rectangles
             _easyTexture = SDL_image.IMG_LoadTexture(_renderer,
-                "D:\\Muaaz\\Studim\\Semester 3\\c#\\Github\\Galaga-\\Galaga\\Assest\\Easy.png");
+                "./Assest/Easy.png");
             _easyRect = new SDL.SDL_Rect()
             {
                 x = 400,
@@ -80,7 +80,7 @@ namespace Galaga.Menu
 
             };
             _mediumTexture = SDL_image.IMG_LoadTexture(_renderer,
-                "D:\\Muaaz\\Studim\\Semester 3\\c#\\Github\\Galaga-\\Galaga\\Assest\\Medium.png");
+                "./Assest/Medium.png");
             _mediumRect = new SDL.SDL_Rect()
             {
                 x = 400,
@@ -89,7 +89,7 @@ namespace Galaga.Menu
                 h = 50
             };
             _hardTexture = SDL_image.IMG_LoadTexture(_renderer,
-                "D:\\Muaaz\\Studim\\Semester 3\\c#\\Github\\Galaga-\\Galaga\\Assest\\Hard.png");
+                "./Assest/Hard.png");
             _hardRect = new SDL.SDL_Rect()
             {
                 x = 400,
@@ -98,7 +98,7 @@ namespace Galaga.Menu
                 h = 50
             };
             _backTexture = SDL_image.IMG_LoadTexture(_renderer,
-                "D:\\Muaaz\\Studim\\Semester 3\\c#\\Github\\Galaga-\\Galaga\\Assest\\Back.png");
+                "./Assest/Back.png");
             _backButtonRect = new SDL.SDL_Rect()
             {
                 x = 400,
