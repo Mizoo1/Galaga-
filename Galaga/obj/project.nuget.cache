@@ -1,10 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "v7allSzyFe2DvCrXcZFQlXoQao7k2RHz0JQkSmSkoh3bTna4WTB8C23AG7sjNbBYjdM70uW2VNQSAEGJUlWeuQ==",
+  "dgSpecHash": "WcWETnLgdjJKAb4MnORdIECMP7uiYaxmOf1o81FzxXpJnZIFN75U0b3m1KwOPVv+BVR2WPne3/FwMnYfQ2qW+g==",
   "success": true,
-  "projectFilePath": "/Users/nourmac/Desktop/Semester 3/Prog /Galaga-/Galaga/Galaga.csproj",
+  "projectFilePath": "D:\\Muaaz\\Studim\\Semester 3\\c#\\Github\\Galaga-\\Galaga\\Galaga.csproj",
   "expectedPackageFiles": [
-    "/Users/nourmac/.nuget/packages/sayers.sdl2.core/1.0.11/sayers.sdl2.core.1.0.11.nupkg.sha512"
+    "C:\\Users\\mouaz\\.nuget\\packages\\sayers.sdl2.core\\1.0.11\\sayers.sdl2.core.1.0.11.nupkg.sha512"
   ],
   "logs": []
 }
